@@ -1,22 +1,30 @@
-require './Kudomon.rb'
-require './kudomons/Sourbulb.rb'
-require './Trainer.rb'
+require_relative './kudomon'
+require_relative './kudomons/sourbulb'
+require_relative './trainer'
 
 class Game
 
-  attr_accessor :kudomons, :players
+  attr_accessor :kudomons, :trainers
 
-  def initialize(grid_size = Tuple[100, 100])
+  def initialize(grid_size = [100, 100])
       @grid_size = grid_size
-      @players = []
-      @kudomons = Hash.new
+      @trainers = []
+      @kudomons = []
   end
 
   def add_kudomon( kudomon)
-    if (kudomons.haskey?(kudomon.position))
-      puts "2 kudomons cannot be placed at the same place"
+    if(kudomon.kind_of? Kudomon)
+      @kudomons.push(kudomon)
     else
-      kudomons[kudomon.position] = kudomon
+      raise "Object must be Kudomon"
+    end
+  end
+
+  def add_trainer(trainer)
+    if(trainer.kind_of? Trainer)
+      @trainers.push(trainer)
+    else
+      raise "Object must be Trainer"
     end
   end
 
