@@ -33,6 +33,7 @@ class Battle
     if rand(0..1) == 0
       hp2 -= cp1
     end
+    
     while (hp1 > 0 and hp2 > 0)
       hp1 -= cp2
       if hp1 <= 0
