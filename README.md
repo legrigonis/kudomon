@@ -1,8 +1,11 @@
+# Comments on my solutions
+Even though Ruby is not my strongest language, I had great time solving the challenge. I believe I applied OOP ideas to a reasonable extent, though I am sure there is room for improvement, and I am looking forward to discussing my solutions.
+
 # Kudomon GO!
 Credit Kudos' Technical Challenge.
 
 ## What is this challenge for?
-We want to understand the way you think about problems, and how you write code to tackle them. We’re not looking for the most efficient algorithmics, we’re looking for the simplest solution. 
+We want to understand the way you think about problems, and how you write code to tackle them. We’re not looking for the most efficient algorithmics, we’re looking for the simplest solution.
 
 We’re not going to give much in the way of guidance as to the specifics of implementation - if you think a class needs an attribute or a method, you go ahead and do it. You’re in charge.
 
@@ -53,7 +56,7 @@ Now imagine instead of just two people, it’s 10,000 people cramming into Centr
 
 ### Part 4
 #### Be the very best!
-For some reason, `Kudomon` allow their `Trainer`s to make them battle each other until one of them is knocked out. 
+For some reason, `Kudomon` allow their `Trainer`s to make them battle each other until one of them is knocked out.
 
 Add the concept of a `Battle` between two `Kudomon` to your code. Amend your code to take into account that `Kudomon` have `health_points` or `hp` and `combat_points` or `cp`.
 

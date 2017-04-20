@@ -1,5 +1,4 @@
 require_relative './kudomon'
-require_relative './kudomons/sourbulb'
 require_relative './trainer'
 
 class Game

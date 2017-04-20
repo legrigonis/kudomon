@@ -1,5 +1,10 @@
 require_relative './Kudomon.rb'
+require_relative './kudomons/Chikapu.rb'
+require_relative './kudomons/Lesquirt.rb'
+require_relative './kudomons/Mancharred.rb'
+require_relative './kudomons/Passnose.rb'
 require_relative './kudomons/Sourbulb.rb'
+require_relative './kudomons/Twomew.rb'
 
 class Trainer
 
