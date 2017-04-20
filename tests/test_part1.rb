@@ -5,7 +5,6 @@ class TestPart1 < Test::Unit::TestCase
 
   def setup
     @game = Game.new
-    trainer = Trainer.new("Martin")
 
   end
 
@@ -25,13 +24,13 @@ class TestPart1 < Test::Unit::TestCase
   end
 
   def test_creation_trainer_default
-    trainer = Trainer.new("Martin")
+    trainer = Trainer.new(@game, "Martin")
     @game.add_trainer(trainer);
     assert((@game.trainers.include? trainer), "Player creation with default parameters failed")
   end
 
   def test_creation_trainer_custom
-    trainer = Trainer.new("Nora", [40, 50])
+    trainer = Trainer.new(@game,  "Nora", [40, 50])
     @game.add_trainer(trainer);
     assert((@game.trainers.include? trainer), "Player creation with custom parameters failed")
     assert_equal(trainer.name, "Nora", "Player creation with custom name failed")
@@ -39,7 +38,7 @@ class TestPart1 < Test::Unit::TestCase
   end
 
   def test_wrong_kudomon_type
-    trainer = Trainer.new("Nora", [40, 50])
+    trainer = Trainer.new(@game, "Nora", [60, 50])
     assert_raise(RuntimeError){@game.add_kudomon(trainer)}
   end
 
