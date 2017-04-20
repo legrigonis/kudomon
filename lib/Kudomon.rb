@@ -1,9 +1,10 @@
 class Kudomon
 
-  attr_accessor :type, :position, :hp, :cp, :owner_name
+  attr_accessor :name, :type, :position, :hp, :cp, :owner_name
 
-
-  def initialize(type, position = [0, 0], hp = 100, cp = 10)
+  #TODO Populate all the kudomons
+  def initialize(name, type, position = [0, 0], hp = 100, cp = 10)
+    @name = name
     @type = type
     @position = position
     @hp = hp
@@ -15,4 +16,7 @@ class Kudomon
     enemy_kudomon.hp -= cp;
   end
 
+  def copy
+    Kudomon.new(self.name, self.type, self.position, self.hp, self.cp)
+  end
 end
