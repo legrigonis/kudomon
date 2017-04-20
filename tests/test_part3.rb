@@ -1,6 +1,9 @@
 require "test/unit"
 require_relative '../lib/game'
 require_relative '../lib/battle'
+require_relative '../lib/kudomons/mancharred'
+require_relative '../lib/kudomons/squirtle'
+require_relative '../lib/kudomons/mewtwo'
 
 class TestPart3 < Test::Unit::TestCase
 
@@ -15,11 +18,11 @@ class TestPart3 < Test::Unit::TestCase
 
   def test_catch_kudomon
     #additional setup
-    kudomon_close= Sourbulb.new([20, 10], 200, 30)
+    kudomon_close= Mancharred.new([20, 10], 200, 30)
     @game.add_kudomon(kudomon_close)
-    kudomon_med= Sourbulb.new([40, 45], 100, 10)
+    kudomon_med= Squirtle.new([40, 45], 200, 30)
     @game.add_kudomon(kudomon_med)
-    kudomon_far= Sourbulb.new([90, 95], 400, 30)
+    kudomon_far= Mewtwo.new([90, 95], 200, 30)
     @game.add_kudomon(kudomon_far)
 
     trainer1 = Trainer.new(@game,  "Martin", [21, 11])
@@ -43,7 +46,7 @@ class TestPart3 < Test::Unit::TestCase
     battle = Battle.new
 
     winner = battle.fight(trainer1, trainer2)
-    assert_equal(winner, trainer1, "Battle logic went wrong")
+    assert_equal(winner, trainer2, "Battle logic went wrong")
     winner = battle.fight(trainer1, trainer3)
     assert_equal(winner, trainer3, "Battle logic went wrong")
 
