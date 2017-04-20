@@ -32,4 +32,25 @@ class Game
     ((pos1[0]- pos2[0]) ** 2) + ((pos1[1]- pos2[1]) ** 2)
   end
 
+  def nearest_kudomon(pos)
+    if (@kudomons.empty?)
+      return nil
+    end
+
+    min_dist = +1.0/0.0
+    min_kudomon = nil
+
+    for kudomon in @kudomons
+      new_dist = Game.eucl_sq_distance(pos, kudomon.position)
+      if (new_dist < min_dist)
+        min_dist = new_dist
+        min_kudomon = kudomon
+      end
+    end
+
+    min_kudomon
+  end
+
+
+
 end
