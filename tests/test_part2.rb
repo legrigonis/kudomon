@@ -5,7 +5,6 @@ class TestPart2 < Test::Unit::TestCase
 
   def setup
     @game = Game.new
-
   end
 
   def test_eucl_sq_dist
@@ -24,14 +23,11 @@ class TestPart2 < Test::Unit::TestCase
     @game.add_trainer(trainer);
     #finding closest Kukomon
     assert_equal(trainer.nearest_kudomon, kudomon_close, "Nearest Kudomon was not found")
-    #catching closest kudomon
+
     trainer.catch_kudomon
     assert((@game.kudomons.include? kudomon_close), "Kudomon catching true positive failed")
     assert((@game.kudomons.include? kudomon_med), "Kudomon catching false positive failed")
     assert((@game.kudomons.include? kudomon_far), "Kudomon catching false positive failed")
-    #assert((trainer.kudomons.include? kudomon_close), "Kudomon catching true positive failed")
-    assert(!(trainer.kudomons.include? kudomon_med), "Kudomon catching false positive failed")
-    assert(!(trainer.kudomons.include? kudomon_far), "Kudomon catching false positive failed")
   end
 
   def test_not_catch_kudomon
@@ -40,6 +36,5 @@ class TestPart2 < Test::Unit::TestCase
     assert_equal(trainer.nearest_kudomon, nil)
     assert_raise(RuntimeError){trainer.catch_kudomon}
   end
-
 
 end

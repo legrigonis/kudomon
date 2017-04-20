@@ -5,7 +5,6 @@ class TestPart1 < Test::Unit::TestCase
 
   def setup
     @game = Game.new
-
   end
 
   def test_creation_kudomon_default
